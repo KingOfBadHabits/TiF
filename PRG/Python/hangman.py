@@ -1,18 +1,28 @@
-from random import shuffle
+from random import choice
 
 rjecnik = ['abeceda','godina','riječ','škola']
 
-shuffle(rjecnik)
+rijec = choice(rjecnik)
 
-rijec = rjecnik[1]
+n = 0
+nP = 0
 
-pogodak = "_" * len(rijec)
+pogodak=[]
+
+for i in range(0,len(rijec)):
+    pogodak.append('_')
 
 while True:
-    print(pogodak)
-    pokusaj=str(input(print("Unesite slovo kao pogodak: ")))
-    for i in range(0,rijec.len()+1):
+    print(' '.join(pogodak))
+    pokusaj=str(input("Unesite slovo kao pogodak: "))
+    for i in range(0,len(rijec)):
         if pokusaj == rijec[i]:
             pogodak[i]=rijec[i]
-        
-    
+            n+=1
+    nP+=1
+    if n==len(pogodak):
+        break
+print(' '.join(pogodak))
+
+print("BRAVO!!! Riječ je bila ",rijec,".")
+print("Trebalo ti je ",nP," pokušaja da ju pogodiš.")
